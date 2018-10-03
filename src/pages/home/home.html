@@ -7,8 +7,38 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+  <ion-list>
+    <button (click)="currentPersonChange($event, person)" ion-item *ngFor="let person of list">
+      <span>{{ person?.name }}</span> <span>{{ person?.age }}</span>
+    </button>
+  </ion-list>
+
+  <div class="btn-wrapper">
+    <button ion-button (click)="sortage($event)">Sort age</button>
+    <button ion-button (click)="sortname($event)">Sort name</button>
+  </div>
+
+  <div *ngIf="currentPerson">
+    <div class>
+      <span class="happeness">Szczęśćie</span>
+      <span class="happeness">{{currentPerson?.name}}</span>
+    </div>
+
+    <div class="happenessPointsMain">
+      <ion-fab (click)="minus()">
+        <button ion-fab>
+          <ion-icon class="happenessPoints" ios="ios-remove" md="md-remove">
+          </ion-icon>
+        </button>
+      </ion-fab>
+      <span class="happenessPoints">{{currentPerson?.hp}}</span>
+      <ion-fab (click)="plus()">
+        <button ion-fab>
+          <ion-icon class="happenessPoints" ios="ios-add" md="md-add"></ion-icon>
+        </button>
+      </ion-fab>
+    </div>
+  </div>
+
 </ion-content>

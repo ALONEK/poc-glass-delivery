@@ -1,3 +1,45 @@
 page-home {
 
+    .btn-wrapper {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+    .happeness {
+        font-size: 40px;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+
+        &:nth-child(1) {
+            margin-top: 30px;
+        }
+    }
+    .happenessPoints{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        
+        &:nth-child(1) {
+            font-size: 80px;
+        }
+
+        &:nth-child(2) {
+            font-size: 150px;
+        }
+
+        &:nth-child(3) {
+            font-size: 80px;
+        }
+    }
+    .happenessPointsMain{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    ion-fab {
+        position: relative;
+    }
+    
 }
