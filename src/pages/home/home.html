@@ -1,17 +1,32 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      <div class="head-main">
+        <div>
+          People
+        </div>
+        <div class="head-links">
+          <button ion-button (click)="homePageLink()">
+            <ion-icon ios="ios-home" md="md-home"></ion-icon>
+          </button>
+          <button ion-button (click)="dupaPageLink()">
+            <ion-icon>1</ion-icon>
+          </button>
+          <button ion-button (click)="thirdPageLink()">
+            <ion-icon>2</ion-icon>
+          </button>
+        </div>
+      </div>
     </ion-title>
   </ion-navbar>
+
 </ion-header>
 
 <ion-content padding>
 
   <ion-list>
-    <button (click)="currentPersonChange($event, person)" ion-item *ngFor="let person of list">
-      <span>{{ person?.name }}</span> <span>{{ person?.age }}</span>
-    </button>
+    <cmp-name (click)="currentPersonChange($event, p)" [currentPerson]="p" *ngFor="let p of list">
+    </cmp-name>
   </ion-list>
 
   <div class="btn-wrapper">
@@ -19,9 +34,9 @@
     <button ion-button (click)="sortname($event)">Sort name</button>
   </div>
 
-  <div *ngIf="currentPerson">
+  <div class="happenessWrapper" *ngIf="currentPerson">
     <div class>
-      <span class="happeness">Szczęśćie</span>
+      <span class="happeness">Szczęście</span>
       <span class="happeness">{{currentPerson?.name}}</span>
     </div>
 
@@ -32,7 +47,7 @@
           </ion-icon>
         </button>
       </ion-fab>
-      <span class="happenessPoints">{{currentPerson?.hp}}</span>
+      <span [ngClass]="{'smaller-hpp': currentPerson?.hp > 9 || currentPerson?.hp < -9}" class="happenessPoints">{{currentPerson?.hp}}</span>
       <ion-fab (click)="plus()">
         <button ion-fab>
           <ion-icon class="happenessPoints" ios="ios-add" md="md-add"></ion-icon>
