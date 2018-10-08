@@ -2,13 +2,24 @@
   <ion-navbar>
     <ion-title>
       Ionic Blank
+      <button (click)="NP()" ion-button large>NewPage</button>
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-list no-lines>
+    <listitem *ngFor="let persone of list" [persone]="persone" (click)="personChange(event, persone)">
+    </listitem>
+  </ion-list>
+  <button (click)="oke($event)" ion-button>Default</button>
+  <button (click)="ppt($event)" ion-button>sort</button>
+  <div *ngIf=CPerson>
+    <h1 class='h1'> {{CPerson.name}} </h1>
+    <div class='h2'>
+      <ion-icon (click)="plus()" name="md-add-circle"></ion-icon>
+      {{CPerson.szcz}}
+      <ion-icon (click)="minus()" name="remove"></ion-icon>
+    </div>
+  </div>
 </ion-content>
