@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http'
 import { Component } from '@angular/core'
-import { IonicPage, NavController, NavParams, DisplayWhen } from 'ionic-angular'
+import { IonicPage, NavController, NavParams } from 'ionic-angular'
 
 /**
  * Generated class for the NewPage page.
@@ -24,24 +24,16 @@ export class NewPage {
   ) {}
 
   SPN() {
-    this.reloadDate()
-    this.http
-      .get('https://jsonplaceholder.typicode.com/todos')
-      .toPromise()
-      .then(response => {
-        console.log(response)
-        this.reloadDate
-        this.reloadData()
-      })
-  }
-  reloadDate() {
     this.reload = !this.reload
+    this.http.get('https://jsonplaceholder.typicode.com/todos').toPromise()
+    this.reloadData()
   }
   reloadData() {
     this.http
       .get('https://jsonplaceholder.typicode.com/todos')
       .subscribe((a: any) => {
         this.dupa = a
+        this.reload = !this.reload
       })
   }
 }

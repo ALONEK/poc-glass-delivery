@@ -15,14 +15,12 @@
 <ion-content padding>
   <button (click)="SPN()" ion-button>Super Przycisk Natana</button>
   <div class="reload">
+    <ion-icon *ngIf="reload == true" class="ios-refresh" ios="ios-refresh" md="md-refresh"></ion-icon>
     <div class="BlackScreen">
       <div *ngFor="let i of (dupa)">
         <span>{{i.id}}</span>
         <span>{{i.title}}</span>
       </div>
     </div>
-    <ion-icon class="ios-refresh" ios="ios-refresh" md="md-refresh"></ion-icon>
-
   </div>
-
 </ion-content>
