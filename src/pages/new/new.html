@@ -12,15 +12,17 @@
 
 </ion-header>
 
-
 <ion-content padding>
-
   <button (click)="SPN()" ion-button>Super Przycisk Natana</button>
   <div class="reload">
-    <div *ngFor="let i of (reloadDate | async)">
-      {{i.id}}
-      <button (click)="reloadDate()" ion-button>Załaduj Dane</button>
-      <ion-icon ios="ios-refresh" md="md-refresh"></ion-icon>
+    <div class="BlackScreen">
+      <div *ngFor="let i of (dupa)">
+        <span>{{i.id}}</span>
+        <span>{{i.title}}</span>
+      </div>
     </div>
+    <ion-icon class="ios-refresh" ios="ios-refresh" md="md-refresh"></ion-icon>
+
   </div>
+
 </ion-content>

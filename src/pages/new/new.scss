@@ -1,11 +1,19 @@
 page-new {
   .reload {
     display: flex;
-    flex: 1;
+    flex-direction: column;
     width: 100%;
-    text-align: center;
-    height: 100%;
+    height: auto;
+    background: gray;
     text-justify: auto;
-    font-size: 100px;
+    font-size: 12px;
+  }
+
+  .BlackScreen {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
   }
 }

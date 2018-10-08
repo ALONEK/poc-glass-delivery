@@ -31,7 +31,7 @@ export class NewPage {
       .then(response => {
         console.log(response)
         this.reloadDate
-        this.reloadData
+        this.reloadData()
       })
   }
   reloadDate() {
